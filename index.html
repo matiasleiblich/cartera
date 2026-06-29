@@ -74,10 +74,29 @@ footer{text-align:center;color:var(--muted);font-size:13px;border-top:1px solid 
   .portal-grid2,.portal-grid4{grid-template-columns:1fr}
   .portal-cta .actions{justify-content:center}
 }
-</style></head><body><div class="wrap">
+
+/* ── Navbar ── */
+.navbar{background:#fff;border-bottom:1px solid var(--bd);height:64px;display:flex;align-items:center;padding:0 32px;justify-content:space-between}
+.navbar img{height:42px}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--m);transition:color .15s}
+.nav-links a:hover{color:var(--b)}
+.nav-links a.active{color:var(--b);font-weight:700;border-bottom:2px solid var(--b);padding-bottom:2px}
+@media(max-width:600px){.nav-links{gap:14px}.nav-links a{font-size:13px}}
+</style></head><body><nav class="navbar">
+  <img src="logo.png" alt="IN²">
+  <ul class="nav-links">
+    <li><a href="#" class="active">Herramientas</a></li>
+    <li><a href="https://www.ingenierosinmobiliarios.com" target="_blank">Sobre Nosotros</a></li>
+    <li><a href="https://matiasleiblich.github.io/calculadora-inmobiliaria/" target="_blank">Calculadora</a></li>
+    <li><a href="https://matiasleiblich.github.io/" target="_blank">Contacto</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
 
 <!-- HERO -->
-<div class="hero"><div><img src="logo.png" style="height:48px;display:block;margin-bottom:10px" alt="IN²"><h1 style="margin:0 0 10px">Cartera de Propiedades</h1><p>Elegí tu próxima propiedad y vení a visitarla.</p><div class="actions"><a class="btn primary" href="#venta">Ver propiedades</a><a class="btn secondary" href="https://matiasleiblich.github.io/" target="_blank">Contactar</a></div></div><img alt="" src="cartera.jpg"/></div>
+<div class="hero"><div><h1 style="margin:0 0 10px">Cartera de Propiedades</h1><p>Elegí tu próxima propiedad y vení a visitarla.</p><div class="actions"><a class="btn primary" href="#venta">Ver propiedades</a><a class="btn secondary" href="https://matiasleiblich.github.io/" target="_blank">Contactar</a></div></div><img alt="" src="cartera.jpg"/></div>
 
 <!-- HERRAMIENTAS -->
 <h2>Herramientas</h2>
