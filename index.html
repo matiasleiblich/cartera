@@ -185,6 +185,11 @@ nav {
   margin: 40px 0 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.section-heading-left {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 .section-heading-bar {
@@ -438,8 +443,11 @@ footer {
 @media (max-width: 600px) { footer { flex-direction: column; align-items: flex-start; } }
 
 /* ─── SECCIONES DESPLEGABLES ─────────────────────────────────────────── */
-details { margin-bottom: 8px; }
-details[open] { margin-bottom: 0; }
+details {
+  margin: 0;
+  padding: 0;
+}
+details + details { margin-top: 0; }
 
 details summary {
   list-style: none;
@@ -448,10 +456,6 @@ details summary {
 }
 details summary::-webkit-details-marker { display: none; }
 
-.section-heading {
-  /* ya definido arriba, acá solo agregamos el chevron */
-  justify-content: space-between;
-}
 .section-heading-left {
   display: flex;
   align-items: center;
@@ -512,7 +516,9 @@ details[open] .chevron { transform: rotate(180deg); }
 </div>
 
 <!-- HERRAMIENTAS -->
-<div class="section-heading"><div class="section-heading-bar"></div>Herramientas</div>
+<div class="section-heading">
+  <div class="section-heading-left"><div class="section-heading-bar"></div>Herramientas</div>
+</div>
 <div class="tool-grid">
   <div class="tool-card">
     <div class="tool-icon"><i class="ti ti-calculator"></i></div>
@@ -628,7 +634,9 @@ details[open] .chevron { transform: rotate(180deg); }
 </details>
 
 <!-- ¿CÓMO PUEDO AYUDARTE? -->
-<div class="section-heading"><div class="section-heading-bar"></div>¿Cómo puedo ayudarte?</div>
+<div class="section-heading">
+  <div class="section-heading-left"><div class="section-heading-bar"></div>¿Cómo puedo ayudarte?</div>
+</div>
 <div class="cta-grid">
   <div class="cta-card">
     <div class="cta-icon"><i class="ti ti-message-circle"></i></div>
