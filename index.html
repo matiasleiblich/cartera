@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>IN² Cartera de Propiedades</title>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Cartera de Propiedades | Matías Leiblich</title>
 
-<!-- Open Graph / WhatsApp / Social preview -->
+<!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://matiasleiblich.com/cartera"/>
-<meta property="og:site_name" content="IN² · Matías Leiblich"/>
+<meta property="og:site_name" content="Matías Leiblich · IN²"/>
 <meta property="og:title" content="Cartera de Propiedades · Matías Leiblich"/>
 <meta property="og:description" content="Departamentos, casas, PH y lotes en CABA y GBA. Asesoramiento profesional de Ingenieros Inmobiliarios."/>
 <meta property="og:image" content="https://matiasleiblich.com/cartera/preview.jpg"/>
 <meta property="og:image:type" content="image/jpeg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Cartera de Propiedades · Matías Leiblich"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Cartera de Propiedades · Matías Leiblich"/>
 <meta name="twitter:description" content="Departamentos, casas, PH y lotes en CABA y GBA."/>
 <meta name="twitter:image" content="https://matiasleiblich.com/cartera/preview.jpg"/>
 
-<!-- Google Analytics -->
+<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -26,215 +28,661 @@
   gtag('js', new Date());
   gtag('config', 'G-MC47CJF0VL');
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
 <style>
-:root{--b:#1558A8;--bg:#F5F7FA;--bd:#E5E7EB;--t:#1A1A2E;--m:#6B7280;--l:#E8F0FB;--blue:#1558A8;--blue-light:#E8F0FB;--text:#1A1A2E;--muted:#6B7280;--border:#E5E7EB;--radius:16px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--t)}
-.wrap{max-width:960px;margin:auto;padding:24px}
-.badge{display:inline-block;background:var(--l);color:var(--b);padding:6px 10px;border-radius:10px;font-size:12px;font-weight:600}
-.hero{display:grid;grid-template-columns:1fr 45%;gap:28px;align-items:center;margin:16px 0 40px}
-.hero img{width:100%;height:auto;object-fit:contain;border:none}
-h1{font-size:32px;margin:10px 0}
-p{color:var(--m);line-height:1.6}
-.btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 18px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap}
-.primary{background:var(--b);color:#fff}
-.secondary{background:#fff;border:1px solid var(--b);color:var(--b)}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-h2{font-size:24px;margin:36px 0 14px}
+/* ─── SISTEMA DE DISEÑO MATÍAS LEIBLICH ─────────────────────────────── */
+:root {
+  --ml-brand:        #0F3D6B;
+  --ml-brand-light:  #EBF2FB;
+  --ml-accent:       #C9974A;
+  --ml-accent-light: #FBF3E8;
+  --ml-text:         #1A2535;
+  --ml-text-sub:     #4B5563;
+  --ml-muted:        #9CA3AF;
+  --ml-border:       #E8EDF2;
+  --ml-border-dark:  #D1DAE3;
+  --ml-bg:           #F7F9FC;
+  --ml-surface:      #FFFFFF;
 
-/* Property cards */
-.card{display:grid;grid-template-columns:300px 1fr 180px;background:#fff;border:1px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px}
-.media{position:relative;height:210px}
-.media img.prop-img{display:block;width:100%;height:100%;object-fit:cover}
-.stampimg{position:absolute;left:-18px;top:18px;width:170px;transform:rotate(-18deg);pointer-events:none;z-index:2}
-.info{padding:18px}
-.type{font-size:13px;color:var(--m)}
-.title{font-size:20px;font-weight:600;margin:6px 0}
-.loc{color:var(--m)}
-.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:16px;color:#4b5563;font-size:14px}
-.meta div::before{content:"– ";color:var(--b);font-weight:700}
-.side{padding:18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+  --ml-font-display: 'DM Sans', sans-serif;
+  --ml-font-body:    'Inter', sans-serif;
 
-/* Portal components */
-.portal-grid2{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
-.portal-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:.18s ease}
-.portal-card:hover{transform:translateY(-3px);box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.portal-icon{width:44px;height:44px;background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:14px}
-.portal-icon i{font-size:22px}
-.portal-card h3{font-size:15px;font-weight:600;margin:0 0 8px}
-.portal-card p{font-size:14px;line-height:1.5}
-.portal-link{color:var(--blue);font-weight:600;text-decoration:none}
-.portal-link-icon{display:inline-flex;align-items:center;gap:8px;margin-top:6px}
-.portal-link-icon i{font-size:18px;margin-right:8px}
-.portal-link-stack{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.portal-grid4{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
-.portal-cta{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:40px;text-align:center}
-.portal-cta h2{font-size:24px;margin:28px 0 14px}
-.portal-cta .actions{justify-content:center}
-.portal-cta .btn i{font-size:18px;margin-right:8px}
+  --ml-radius-sm:   8px;
+  --ml-radius-md:   12px;
+  --ml-radius-lg:   16px;
 
-footer{text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border);padding:20px;margin-top:40px}
-
-@media(max-width:850px){
-  .hero{grid-template-columns:1fr}
-  .card{grid-template-columns:1fr}
-  .media{height:220px}
-  .side{padding-top:0}
-}
-@media(max-width:700px){
-  .portal-grid2,.portal-grid4{grid-template-columns:1fr}
-  .portal-cta .actions{justify-content:center}
+  --ml-shadow-card: 0 1px 3px rgba(15,61,107,.06), 0 4px 12px rgba(15,61,107,.04);
 }
 
-/* ── Navbar ── */
-.navbar{background:#fff;border-bottom:1px solid var(--bd);height:64px;display:flex;align-items:center;padding:0 32px;justify-content:space-between}
-.navbar img{height:42px}
-.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--m);transition:color .15s}
-.nav-links a:hover{color:var(--b)}
-.nav-links a.active{color:var(--b);font-weight:700;border-bottom:2px solid var(--b);padding-bottom:2px}
-@media(max-width:600px){.nav-links{gap:14px}.nav-links a{font-size:13px}}
-</style></head><body><nav class="navbar">
-  <img src="logo.png" alt="IN²">
-  <ul class="nav-links">
-    <li><a href="#" class="active">Herramientas</a></li>
-    <li><a href="https://www.ingenierosinmobiliarios.com" target="_blank">Sobre Nosotros</a></li>
-    <li><a href="https://matiasleiblich.github.io/calculadora-inmobiliaria/" target="_blank">Calculadora</a></li>
-    <li><a href="https://matiasleiblich.github.io/" target="_blank">Contacto</a></li>
-  </ul>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--ml-font-body);
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; }
+
+/* ─── NAVBAR ─────────────────────────────────────────────────────────── */
+nav {
+  background: var(--ml-surface);
+  border-bottom: 1px solid var(--ml-border);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo img { height: 36px; display: block; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ml-text-sub);
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--ml-brand); }
+.nav-links a.active { color: var(--ml-brand); font-weight: 700; }
+@media (max-width: 600px) { .nav-links { display: none; } }
+
+/* ─── PAGE ───────────────────────────────────────────────────────────── */
+.wrap { max-width: 960px; margin: auto; padding: 36px 20px 60px; }
+
+/* ─── HERO ───────────────────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 42%;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 48px;
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  padding: 36px 20px;
+  box-shadow: var(--ml-shadow-card);
+}
+.hero img { width: 100%; height: auto; object-fit: contain; border-radius: var(--ml-radius-md); }
+.hero-eyebrow {
+  font-family: var(--ml-font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ml-accent);
+  margin-bottom: 10px;
+}
+.hero h1 {
+  font-family: var(--ml-font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--ml-text);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.hero-byline {
+  font-size: 13px;
+  color: var(--ml-muted);
+  margin-bottom: 12px;
+}
+.hero-byline a { color: var(--ml-accent); font-weight: 600; }
+.hero p {
+  font-size: 14px;
+  color: var(--ml-text-sub);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: var(--ml-radius-sm);
+  font-family: var(--ml-font-body);
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: opacity .15s, transform .1s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { opacity: .88; }
+.btn:active { transform: scale(.98); }
+.btn i { font-size: 16px; }
+.primary { background: var(--ml-brand); color: #fff; }
+.secondary { background: var(--ml-surface); border: 1.5px solid var(--ml-brand); color: var(--ml-brand); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding: 28px 24px; }
+  .hero img { display: none; }
+}
+
+/* ─── SECTION HEADINGS ───────────────────────────────────────────────── */
+.section-heading {
+  font-family: var(--ml-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ml-text);
+  letter-spacing: -.02em;
+  margin: 40px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-heading-bar {
+  width: 3px;
+  height: 20px;
+  background: var(--ml-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ─── PROPERTY CARDS ─────────────────────────────────────────────────── */
+.card {
+  display: grid;
+  grid-template-columns: 280px 1fr 170px;
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ml-shadow-card);
+  margin-bottom: 16px;
+  transition: transform .18s, box-shadow .18s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15,61,107,.10);
+}
+.media { position: relative; height: 200px; }
+.media img.prop-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.stampimg {
+  position: absolute;
+  left: -16px;
+  top: 16px;
+  width: 150px;
+  transform: rotate(-18deg);
+  pointer-events: none;
+  z-index: 2;
+}
+.info { padding: 20px; }
+.prop-type {
+  font-family: var(--ml-font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ml-accent);
+  margin-bottom: 6px;
+}
+.prop-title {
+  font-family: var(--ml-font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ml-text);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.prop-loc {
+  font-size: 13px;
+  color: var(--ml-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.prop-loc i { font-size: 13px; }
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  font-size: 13px;
+  color: var(--ml-text-sub);
+}
+.meta div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.meta div::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--ml-accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.side {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-left: 1px solid var(--ml-border);
+}
+
+@media (max-width: 850px) {
+  .card { grid-template-columns: 1fr; }
+  .media { height: 200px; }
+  .side { border-left: none; border-top: 1px solid var(--ml-border); flex-direction: row; }
+}
+@media (max-width: 500px) {
+  .side { flex-direction: column; }
+}
+
+/* ─── HERRAMIENTAS (1 card) ──────────────────────────────────────────── */
+.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 600px) { .tool-grid { grid-template-columns: 1fr; } }
+
+.tool-card {
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-top: 3px solid var(--ml-accent);
+  border-radius: var(--ml-radius-lg);
+  padding: 20px;
+  box-shadow: var(--ml-shadow-card);
+  transition: transform .18s, box-shadow .18s;
+}
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15,61,107,.10);
+}
+.tool-icon {
+  width: 40px; height: 40px;
+  background: var(--ml-brand-light);
+  border-radius: var(--ml-radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ml-brand);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.tool-card h3 {
+  font-family: var(--ml-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ml-text);
+  margin-bottom: 6px;
+}
+.tool-card p { font-size: 13px; color: var(--ml-text-sub); line-height: 1.5; }
+.tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ml-brand);
+}
+.tool-link:hover { color: var(--ml-accent); }
+
+/* ─── CTA CARDS ──────────────────────────────────────────────────────── */
+.cta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
+@media (max-width: 600px) { .cta-grid { grid-template-columns: 1fr; } }
+
+.cta-card {
+  background: var(--ml-surface);
+  border: 1px solid var(--ml-border);
+  border-top: 3px solid var(--ml-brand);
+  border-radius: var(--ml-radius-lg);
+  padding: 20px;
+  box-shadow: var(--ml-shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform .18s, box-shadow .18s;
+}
+.cta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15,61,107,.10);
+}
+.cta-icon {
+  width: 40px; height: 40px;
+  background: var(--ml-brand-light);
+  border-radius: var(--ml-radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ml-brand);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.cta-card h3 {
+  font-family: var(--ml-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ml-text);
+}
+.cta-card p { font-size: 13px; color: var(--ml-text-sub); line-height: 1.5; flex: 1; }
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ml-brand);
+  margin-top: 4px;
+}
+.cta-link:hover { color: var(--ml-accent); }
+.cta-link-stack { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+
+/* ─── HABLAMOS BLOCK ─────────────────────────────────────────────────── */
+.hablamos {
+  background: #2C3340;
+  border-radius: var(--ml-radius-lg);
+  padding: 36px 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+.hablamos h2 {
+  font-family: var(--ml-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+.hablamos .actions { justify-content: center; }
+.hablamos .btn-wpp { background: #25D366; color: #fff; border: none; }
+.hablamos .btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.35);
+}
+.hablamos .btn-outline:hover { border-color: rgba(255,255,255,.7); }
+@media (max-width: 600px) { .hablamos { padding: 28px 20px; } }
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────── */
+footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--ml-border);
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-brand {
+  font-family: var(--ml-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ml-text);
+}
+.footer-sub { font-size: 11px; color: var(--ml-muted); margin-top: 2px; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-size: 13px;
+  color: var(--ml-muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.footer-links a:hover { color: var(--ml-brand); }
+@media (max-width: 600px) { footer { flex-direction: column; align-items: flex-start; } }
+
+/* ─── SECCIONES DESPLEGABLES ─────────────────────────────────────────── */
+details { margin-bottom: 8px; }
+details[open] { margin-bottom: 0; }
+
+details summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+details summary::-webkit-details-marker { display: none; }
+
+.section-heading {
+  /* ya definido arriba, acá solo agregamos el chevron */
+  justify-content: space-between;
+}
+.section-heading-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-heading-meta {
+  font-family: var(--ml-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ml-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chevron {
+  font-size: 18px;
+  color: var(--ml-muted);
+  transition: transform .2s ease;
+  flex-shrink: 0;
+}
+details[open] .chevron { transform: rotate(180deg); }
+
+.section-body { padding-top: 12px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://matiasleiblich.com">
+      <img src="logo.png" alt="IN²">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Cartera</a></li>
+      <li><a href="https://www.ingenierosinmobiliarios.com.ar" target="_blank">Sobre nosotros</a></li>
+      <li><a href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">Calculadora</a></li>
+      <li><a href="https://matiasleiblich.com" target="_blank">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="wrap">
 
 <!-- HERO -->
-<div class="hero"><div><h1 style="margin:0 0 10px">Cartera de Propiedades</h1><p>Elegí tu próxima propiedad y vení a visitarla.</p><div class="actions"><a class="btn primary" href="#venta">Ver propiedades</a><a class="btn secondary" href="https://matiasleiblich.github.io/" target="_blank">Contactar</a></div></div><img alt="" src="cartera.jpg"/></div>
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow"><i class="ti ti-building-estate" style="font-size:11px;margin-right:4px"></i>Cartera de propiedades</div>
+    <h1>Tu próxima<br>propiedad, acá.</h1>
+    <div class="hero-byline">por <a href="https://matiasleiblich.com">Matías Leiblich</a> · Ingenieros Inmobiliarios</div>
+    <p>Elegí tu próxima propiedad y vení a visitarla.</p>
+    <div class="actions">
+      <a class="btn primary" href="#venta"><i class="ti ti-home-search"></i>Ver propiedades</a>
+      <a class="btn secondary" href="https://matiasleiblich.com"><i class="ti ti-brand-whatsapp"></i>Contactar</a>
+    </div>
+  </div>
+  <img alt="Cartera de propiedades" src="cartera.jpg"/>
+</div>
 
 <!-- HERRAMIENTAS -->
-<h2>Herramientas</h2>
-<div class="portal-grid2">
-<div class="portal-card">
-<div class="portal-icon"><i class="ti ti-calculator"></i></div>
-<h3>Calculadora Inmobiliaria</h3>
-<p>Calculá los gastos a la hora de comprar y vender tu propiedad.</p>
-<p><a class="portal-link" href="https://matiasleiblich.github.io/calculadora-inmobiliaria/" target="_blank">Abrir herramienta →</a></p>
-</div>
+<div class="section-heading"><div class="section-heading-bar"></div>Herramientas</div>
+<div class="tool-grid">
+  <div class="tool-card">
+    <div class="tool-icon"><i class="ti ti-calculator"></i></div>
+    <h3>Calculadora Inmobiliaria</h3>
+    <p>Calculá los gastos de compra y venta de tu propiedad en CABA y Provincia de Buenos Aires.</p>
+    <a class="tool-link" href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">Abrir herramienta <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="ti ti-home-dollar"></i></div>
+    <h3>¿Cuánto vale tu propiedad?</h3>
+    <p>Obtené una estimación del valor de tu propiedad en CABA en segundos.</p>
+    <a class="tool-link" href="https://matiasleiblich.com" target="_blank">Ir al portal <i class="ti ti-arrow-right"></i></a>
+  </div>
 </div>
 
 <!-- EN VENTA -->
-<h2 id="venta">Propiedades en Venta</h2>
+<details open id="venta">
+<summary>
+  <div class="section-heading">
+    <div class="section-heading-left"><div class="section-heading-bar"></div>Propiedades en venta</div>
+    <div class="section-heading-meta"><span>8 propiedades</span><i class="ti ti-chevron-down chevron"></i></div>
+  </div>
+</summary>
+<div class="section-body">
 
 <!-- 1. Semipiso Al Río -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/524112/3173ce/md/3173cea437a8de79a551cc4fb53ff9ae.jpg" alt="Semipiso AL RÍO"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">Semipiso AL RÍO - Terraza y Pileta propia</div><div class="loc">Vicente López · GBA</div><div class="meta"><div>3 Ambientes</div><div>182 m² Totales</div><div>2 Dormitorios</div><div>146 m² Cubiertos</div><div>2 Baños</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540063174337686" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540063174337686" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/524112/3173ce/md/3173cea437a8de79a551cc4fb53ff9ae.jpg" alt="Semipiso AL RÍO"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">Semipiso AL RÍO - Terraza y Pileta propia</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Vicente López · GBA</div><div class="meta"><div>3 Ambientes</div><div>182 m² Totales</div><div>2 Dormitorios</div><div>146 m² Cubiertos</div><div>2 Baños</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540063174337686" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540063174337686" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 2. 2 Ambientes con Pileta - San Telmo -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/505117/c5c6d3/md/c5c6d3b447d9cfc86eeb9bf164692904.jpg" alt="2 Ambientes con Pileta - San Telmo"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">2 Ambientes con Pileta - San Telmo</div><div class="loc">San Telmo · CABA</div><div class="meta"><div>2 Ambientes</div><div>226 m² Totales</div><div>1 Baño</div><div>97 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545222959758736" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545222959758736" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/505117/c5c6d3/md/c5c6d3b447d9cfc86eeb9bf164692904.jpg" alt="2 Ambientes con Pileta - San Telmo"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">2 Ambientes con Pileta - San Telmo</div><div class="prop-loc"><i class="ti ti-map-pin"></i>San Telmo · CABA</div><div class="meta"><div>2 Ambientes</div><div>226 m² Totales</div><div>1 Baño</div><div>97 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545222959758736" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545222959758736" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 3. 2 Ambientes con Balcón - Boedo -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/531154/edbe80/md/edbe80585879617a0bc038b1e0e3286d.jpg" alt="2 Ambientes con Balcón - Boedo"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">2 Ambientes con Balcón - Boedo</div><div class="loc">Boedo · CABA</div><div class="meta"><div>2 Ambientes</div><div>41.5 m² Totales</div><div>1 Baño</div><div>41.5 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540092924113507" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540092924113507" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/531154/edbe80/md/edbe80585879617a0bc038b1e0e3286d.jpg" alt="2 Ambientes con Balcón - Boedo"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">2 Ambientes con Balcón - Boedo</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Boedo · CABA</div><div class="meta"><div>2 Ambientes</div><div>41.5 m² Totales</div><div>1 Baño</div><div>41.5 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540092924113507" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540092924113507" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 4. PH con patio y terraza propia -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/521444/360ee3/md/360ee387bef7ca9b227bb87967f59e82.jpg" alt="PH con patio y terraza propia"/></div><div class="info"><div class="type">PH</div><div class="title">PH con patio y terraza propia - 4 dormitorios</div><div class="loc">Balvanera · CABA</div><div class="meta"><div>5 Ambientes</div><div>135 m² Totales</div><div>4 Dormitorios</div><div>135 m² Cubiertos</div><div>2 Baños</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540048216957976" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540048216957976" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/521444/360ee3/md/360ee387bef7ca9b227bb87967f59e82.jpg" alt="PH con patio y terraza propia"/></div><div class="info"><div class="prop-type">PH</div><div class="prop-title">PH con patio y terraza propia - 4 dormitorios</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Balvanera · CABA</div><div class="meta"><div>5 Ambientes</div><div>135 m² Totales</div><div>4 Dormitorios</div><div>135 m² Cubiertos</div><div>2 Baños</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540048216957976" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540048216957976" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 5. Lote 2.526m2 - Miralagos I -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/522324/cf5c3e/md/cf5c3ee37b599d17d9deb8548c70ae11.jpg" alt="Lote 2.526m2 - Miralagos I"/></div><div class="info"><div class="type">LOTE</div><div class="title">Lote 2.526m2 - Miralagos I</div><div class="loc">Miralagos I · GBA</div><div class="meta"><div>2.526 m² Totales</div><div>2.526 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540044209550286" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540044209550286" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/522324/cf5c3e/md/cf5c3ee37b599d17d9deb8548c70ae11.jpg" alt="Lote 2.526m2 - Miralagos I"/></div><div class="info"><div class="prop-type">Lote</div><div class="prop-title">Lote 2.526m² - Miralagos I</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Miralagos I · GBA</div><div class="meta"><div>2.526 m² Totales</div><div>2.526 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540044209550286" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540044209550286" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 6. VENTA Doble terreno - Pileta - Quincho -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/524116/9a81a2/md/9a81a2d50b51309da1d3df135dcc9095.jpg" alt="VENTA Doble terreno - Pileta - Quincho"/></div><div class="info"><div class="type">CASA</div><div class="title">VENTA Doble terreno - Pileta - Quincho</div><div class="loc">Florencio Varela · GBA</div><div class="meta"><div>3 Baños</div><div>1365 m² Totales</div><div>2 Cocheras</div><div>1505 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540046359347686" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540046359347686" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/524116/9a81a2/md/9a81a2d50b51309da1d3df135dcc9095.jpg" alt="VENTA Doble terreno - Pileta - Quincho"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Doble terreno - Pileta - Quincho</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Florencio Varela · GBA</div><div class="meta"><div>3 Baños</div><div>1365 m² Totales</div><div>2 Cocheras</div><div>1505 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540046359347686" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540046359347686" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 7. Casa 5 Ambientes frente a la Estación -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/507198/fed517/md/fed517caca9527f68bca94e185d792a7.jpg" alt="Casa 5 Ambientes frente a la Estación"/></div><div class="info"><div class="type">CASA</div><div class="title">Casa 5 Ambientes frente a la Estación</div><div class="loc">Don Bosco · GBA</div><div class="meta"><div>5 Ambientes</div><div>216 m² Totales</div><div>2 Baños</div><div>312 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540010825421346" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540010825421346" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/507198/fed517/md/fed517caca9527f68bca94e185d792a7.jpg" alt="Casa 5 Ambientes frente a la Estación"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Casa 5 Ambientes frente a la Estación</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Don Bosco · GBA</div><div class="meta"><div>5 Ambientes</div><div>216 m² Totales</div><div>2 Baños</div><div>312 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540010825421346" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540010825421346" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 8. Departamento 4 Ambientes - Juan el Bueno -->
-<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/513900/cf2ae8/md/cf2ae844e61a0cc78f8d8228485541f1.jpg" alt="Departamento 4 Ambientes - Juan el Bueno"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">Departamento 4 Ambientes - Juan el Bueno</div><div class="loc">Juan el Bueno · GBA</div><div class="meta"><div>4 Ambientes</div><div>82 m² Totales</div><div>1 Baño</div><div>82 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000520332066" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000520332066" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img class="prop-img" src="https://static.kiteprop.com/kp/properties/513900/cf2ae8/md/cf2ae844e61a0cc78f8d8228485541f1.jpg" alt="Departamento 4 Ambientes - Juan el Bueno"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">Departamento 4 Ambientes - Juan el Bueno</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Juan el Bueno · GBA</div><div class="meta"><div>4 Ambientes</div><div>82 m² Totales</div><div>1 Baño</div><div>82 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000520332066" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000520332066" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
+
+</div><!-- /section-body venta -->
+</details>
 
 <!-- RESERVADAS -->
-<h2 id="res">Propiedades Reservadas</h2>
+<details id="res">
+<summary>
+  <div class="section-heading">
+    <div class="section-heading-left"><div class="section-heading-bar"></div>Propiedades reservadas</div>
+    <div class="section-heading-meta"><span>3 propiedades</span><i class="ti ti-chevron-down chevron"></i></div>
+  </div>
+</summary>
+<div class="section-body">
 
 <!-- 9. 3 Ambientes refaccionado - Recoleta -->
-<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/522403/4e0ec3/md/4e0ec3d52b5746ca846f4f02f088ec01.jpg" alt="3 Ambientes refaccionado - Recoleta"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">3 Ambientes refaccionado - Recoleta</div><div class="loc">Recoleta · CABA</div><div class="meta"><div>3 Ambientes</div><div>86 m² Totales</div><div>1 Baño</div><div>86 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545220632262286" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545220632262286" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/522403/4e0ec3/md/4e0ec3d52b5746ca846f4f02f088ec01.jpg" alt="3 Ambientes refaccionado - Recoleta"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">3 Ambientes refaccionado - Recoleta</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Recoleta · CABA</div><div class="meta"><div>3 Ambientes</div><div>86 m² Totales</div><div>1 Baño</div><div>86 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545220632262286" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545220632262286" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 10. Casa 5 ambientes a metros del Nuevo Quilmes -->
-<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/441056/e24c55/md/e24c557fc02d2cac57ebc5c278d1a2d7.jpg" alt="Casa 5 ambientes a metros del Nuevo Quilmes"/></div><div class="info"><div class="type">CASA</div><div class="title">Casa 5 ambientes a metros del Nuevo Quilmes</div><div class="loc">Don Bosco · GBA</div><div class="meta"><div>5 Ambientes</div><div>250 m² Totales</div><div>1 Baño</div><div>320 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540048789523684" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540048789523684" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/441056/e24c55/md/e24c557fc02d2cac57ebc5c278d1a2d7.jpg" alt="Casa 5 ambientes a metros del Nuevo Quilmes"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Casa 5 ambientes a metros del Nuevo Quilmes</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Don Bosco · GBA</div><div class="meta"><div>5 Ambientes</div><div>250 m² Totales</div><div>1 Baño</div><div>320 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540048789523684" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540048789523684" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 11. Departamento 2 Ambientes. Vista abierta -->
-<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/513157/f3db4b/md/f3db4bf5e71b6d7d83ea67b572938af2.jpg" alt="Departamento 2 Ambientes. Vista abierta"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">Departamento 2 Ambientes. Vista abierta</div><div class="loc">Wilde · GBA</div><div class="meta"><div>2 Ambientes</div><div>52 m² Totales</div><div>2 Baños</div><div>52 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545226662523856" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545226662523856" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Reservado" class="stampimg" src="reservado.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/513157/f3db4b/md/f3db4bf5e71b6d7d83ea67b572938af2.jpg" alt="Departamento 2 Ambientes. Vista abierta"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">Departamento 2 Ambientes. Vista abierta</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Wilde · GBA</div><div class="meta"><div>2 Ambientes</div><div>52 m² Totales</div><div>2 Baños</div><div>52 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545226662523856" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545226662523856" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
+
+</div><!-- /section-body reservadas -->
+</details>
 
 <!-- VENDIDAS -->
-<h2 id="ven">Propiedades Vendidas</h2>
+<details id="ven">
+<summary>
+  <div class="section-heading">
+    <div class="section-heading-left"><div class="section-heading-bar"></div>Propiedades vendidas</div>
+    <div class="section-heading-meta"><span>9 propiedades</span><i class="ti ti-chevron-down chevron"></i></div>
+  </div>
+</summary>
+<div class="section-body">
 
 <!-- 12. 4 Ambientes + Dep. Refaccionado. Cochera -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/491705/cdfb9a/md/cdfb9a2581fe77ba95e91f4d65b4dd5c.jpg" alt="4 Ambientes + Dep. Refaccionado. Cochera"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">4 Ambientes + Dep. Refaccionado. Cochera</div><div class="loc">Recoleta · CABA</div><div class="meta"><div>4 Ambientes</div><div>124 m² Totales</div><div>2 Baños</div><div>124 m² Cubiertos</div><div>1 Cochera</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545265715434406" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545265715434406" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/491705/cdfb9a/md/cdfb9a2581fe77ba95e91f4d65b4dd5c.jpg" alt="4 Ambientes + Dep. Refaccionado. Cochera"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">4 Ambientes + Dep. Refaccionado. Cochera</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Recoleta · CABA</div><div class="meta"><div>4 Ambientes</div><div>124 m² Totales</div><div>2 Baños</div><div>124 m² Cubiertos</div><div>1 Cochera</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545265715434406" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545265715434406" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 13. Casa Refaccionada Bernal. Jardín. Pileta -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/477216/2420ca/md/2420ca41a2afd13dbd5111476dfe9d3a.jpg" alt="Casa Refaccionada Bernal. Jardín. Pileta"/></div><div class="info"><div class="type">CASA</div><div class="title">Casa Refaccionada Bernal. Jardín. Pileta</div><div class="loc">Bernal Este · GBA</div><div class="meta"><div>3 Baños</div><div>192 m² Totales</div><div>1 Cochera</div><div>283 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540046677733965" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540046677733965" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/477216/2420ca/md/2420ca41a2afd13dbd5111476dfe9d3a.jpg" alt="Casa Refaccionada Bernal. Jardín. Pileta"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Casa Refaccionada Bernal. Jardín. Pileta</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Bernal Este · GBA</div><div class="meta"><div>3 Baños</div><div>192 m² Totales</div><div>1 Cochera</div><div>283 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540046677733965" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540046677733965" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 14. Casa en Venta. 4 Dormitorios. Jardín -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/481350/b25132/md/b2513228f1406323f6ef6d6b421b8e3d.jpg" alt="Casa en Venta. 4 Dormitorios. Jardín"/></div><div class="info"><div class="type">CASA</div><div class="title">Casa en Venta. 4 Dormitorios. Jardín</div><div class="loc">Quilmes Oeste · GBA</div><div class="meta"><div>4 Dormitorios</div><div>250 m² Totales</div><div>2 Baños</div><div>425 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540052655442975" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540052655442975" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/481350/b25132/md/b2513228f1406323f6ef6d6b421b8e3d.jpg" alt="Casa en Venta. 4 Dormitorios. Jardín"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Casa 4 Dormitorios. Jardín</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Quilmes Oeste · GBA</div><div class="meta"><div>4 Dormitorios</div><div>250 m² Totales</div><div>2 Baños</div><div>425 m² Cubiertos</div><div>2 Cocheras</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540052655442975" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540052655442975" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 15. 2 Ambientes con Balcón. Amenities. Palermo Hollywood -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430536/97701d/md/97701dad16cbc60bed49444d79801e12.jpg" alt="2 Ambientes con Balcón. Amenities. Palermo Hollywood"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">2 Ambientes con Balcón. Amenities. Palermo Hollywood</div><div class="loc">Palermo Hollywood · CABA</div><div class="meta"><div>2 Ambientes</div><div>39 m² Totales</div><div>1 Baño</div><div>39 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540042811304364" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540042811304364" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430536/97701d/md/97701dad16cbc60bed49444d79801e12.jpg" alt="2 Ambientes con Balcón. Amenities. Palermo Hollywood"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">2 Ambientes con Balcón. Amenities. Palermo Hollywood</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Palermo Hollywood · CABA</div><div class="meta"><div>2 Ambientes</div><div>39 m² Totales</div><div>1 Baño</div><div>39 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540042811304364" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540042811304364" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 16. PH 3 Ambientes. Refaccionado. Terraza -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430468/d54cf1/md/d54cf1d5200550b569d3b0c8db5cd3d3.jpg" alt="PH 3 Ambientes. Refaccionado. Terraza"/></div><div class="info"><div class="type">PH</div><div class="title">PH 3 Ambientes. Refaccionado. Terraza</div><div class="loc">Parque Chacabuco · CABA</div><div class="meta"><div>3 Ambientes</div><div>65 m² Totales</div><div>1 Baño</div><div>65 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540065747652364" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540065747652364" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430468/d54cf1/md/d54cf1d5200550b569d3b0c8db5cd3d3.jpg" alt="PH 3 Ambientes. Refaccionado. Terraza"/></div><div class="info"><div class="prop-type">PH</div><div class="prop-title">PH 3 Ambientes. Refaccionado. Terraza</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Parque Chacabuco · CABA</div><div class="meta"><div>3 Ambientes</div><div>65 m² Totales</div><div>1 Baño</div><div>65 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540065747652364" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540065747652364" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 17. 2 Ambientes. Luminoso. Apto Crédito -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430460/939e90/md/939e90833c8f684d16f11ff9cf05091a.jpg" alt="2 Ambientes. Luminoso. Apto Crédito"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">2 Ambientes. Luminoso. Apto Crédito</div><div class="loc">Caballito · CABA</div><div class="meta"><div>2 Ambientes</div><div>37 m² Totales</div><div>1 Baño</div><div>37 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000925932364" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000925932364" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430460/939e90/md/939e90833c8f684d16f11ff9cf05091a.jpg" alt="2 Ambientes. Luminoso. Apto Crédito"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">2 Ambientes. Luminoso. Apto Crédito</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Caballito · CABA</div><div class="meta"><div>2 Ambientes</div><div>37 m² Totales</div><div>1 Baño</div><div>37 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000925932364" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000925932364" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 18. Departamento 3 Ambientes. Galería. Jardín -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430420/7dffb4/md/7dffb461b11c6a2fde97737804c847d3.jpg" alt="Departamento 3 Ambientes. Galería. Jardín"/></div><div class="info"><div class="type">DEPARTAMENTO</div><div class="title">Departamento 3 Ambientes. Galería. Jardín</div><div class="loc">Belgrano · CABA</div><div class="meta"><div>3 Ambientes</div><div>191 m² Totales</div><div>1 Baño</div><div>191 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000144351364" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000144351364" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430420/7dffb4/md/7dffb461b11c6a2fde97737804c847d3.jpg" alt="Departamento 3 Ambientes. Galería. Jardín"/></div><div class="info"><div class="prop-type">Departamento</div><div class="prop-title">Departamento 3 Ambientes. Galería. Jardín</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Belgrano · CABA</div><div class="meta"><div>3 Ambientes</div><div>191 m² Totales</div><div>1 Baño</div><div>191 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F540000144351364" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/540000144351364" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 19. Casa 5 ambientes. 4 Dormitorios. Patio. Pileta -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430375/d7b979/md/d7b979e879fcbdca249c05f8f1666b0b.jpg" alt="Casa 5 ambientes. 4 Dormitorios. Patio. Pileta"/></div><div class="info"><div class="type">CASA</div><div class="title">Casa 5 ambientes. 4 Dormitorios. Patio. Pileta</div><div class="loc">Bernal Este · GBA</div><div class="meta"><div>5 Ambientes</div><div>193 m² Totales</div><div>4 Dormitorios</div><div>193 m² Cubiertos</div><div>3 Baños</div><div>1 Cochera</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545265106650364" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545265106650364" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430375/d7b979/md/d7b979e879fcbdca249c05f8f1666b0b.jpg" alt="Casa 5 ambientes. 4 Dormitorios. Patio. Pileta"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">Casa 5 ambientes. 4 Dormitorios. Patio. Pileta</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Bernal Este · GBA</div><div class="meta"><div>5 Ambientes</div><div>193 m² Totales</div><div>4 Dormitorios</div><div>193 m² Cubiertos</div><div>3 Baños</div><div>1 Cochera</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545265106650364" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545265106650364" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
 
 <!-- 20. 5 Ambientes. Terraza. Luminoso -->
-<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430317/8beba5/md/8beba5d1bdbc8df22e5c1bd063d7520a.jpg" alt="5 Ambientes. Terraza. Luminoso"/></div><div class="info"><div class="type">CASA</div><div class="title">5 Ambientes. Terraza. Luminoso</div><div class="loc">Avellaneda · GBA</div><div class="meta"><div>5 Ambientes</div><div>262 m² Totales</div><div>2 Baños</div><div>262 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545222108139264" target="_blank">Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545222108139264" target="_blank">Ver propiedad ↗</a></div></div>
+<div class="card"><div class="media"><img alt="Vendido" class="stampimg" src="vendido.png"/><img class="prop-img" src="https://static.kiteprop.com/kp/properties/430317/8beba5/md/8beba5d1bdbc8df22e5c1bd063d7520a.jpg" alt="5 Ambientes. Terraza. Luminoso"/></div><div class="info"><div class="prop-type">Casa</div><div class="prop-title">5 Ambientes. Terraza. Luminoso</div><div class="prop-loc"><i class="ti ti-map-pin"></i>Avellaneda · GBA</div><div class="meta"><div>5 Ambientes</div><div>262 m² Totales</div><div>2 Baños</div><div>262 m² Cubiertos</div></div></div><div class="side"><a class="btn secondary" href="https://wa.me/%2B5491161737552?text=Hola%20Matias%2C%20estuve%20viendo%20una%20propiedad%20y%20quisiera%20realizarte%20algunas%20consultas%20https%3A%2F%2Fwww.kiteprop.com%2Flanding%2Fcards%2F545222108139264" target="_blank"><i class="ti ti-brand-whatsapp"></i>Consultar</a><a class="btn primary" href="https://www.kiteprop.com/landing/cards/545222108139264" target="_blank">Ver propiedad <i class="ti ti-external-link"></i></a></div></div>
+
+</div><!-- /section-body vendidas -->
+</details>
 
 <!-- ¿CÓMO PUEDO AYUDARTE? -->
-<h2>¿Cómo puedo ayudarte?</h2>
-<div class="portal-grid4">
-<div class="portal-card">
-<div class="portal-icon"><i class="ti ti-message-circle"></i></div>
-<h3>¿Necesitás ayuda con tu operación?</h3>
-<p>¡Nosotros te ayudamos!</p>
-<div class="portal-link-stack">
-<a class="portal-link portal-link-icon" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank"><i class="ti ti-home"></i>Quiero Comprar</a>
-<a class="portal-link portal-link-icon" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank"><i class="ti ti-coins"></i>Quiero Vender</a>
-</div>
-</div>
-<div class="portal-card">
-<div class="portal-icon"><i class="ti ti-search"></i></div>
-<h3>¿Estás buscando tu próxima propiedad?</h3>
-<p>Recibí acompañamiento profesional de parte de nuestros arquitectos e ingenieros durante todo el proceso de búsqueda.</p>
-<p><a class="portal-link portal-link-icon" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20buscando%20una%20propiedad%20y%20quisiera%20recibir%20asesoramiento." target="_blank"><i class="ti ti-search"></i>Quiero recibir asesoramiento</a></p>
-</div>
-<div class="portal-card">
-<div class="portal-icon"><i class="ti ti-books"></i></div>
-<h3>Guías gratuitas</h3>
-<p>Descargá nuestras guías inmobiliarias y material informativo para compradores, vendedores e inversores.</p>
-<p><a class="portal-link portal-link-icon" href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank"><i class="ti ti-books"></i>Ver biblioteca</a></p>
-</div>
-<div class="portal-card">
-<div class="portal-icon"><i class="ti ti-ruler-measure"></i></div>
-<h3>¿Qué hacer con mi lote?</h3>
-<p>Analizamos indicadores urbanísticos y potencial constructivo para inversión.</p>
-<p><a class="portal-link portal-link-icon" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20consultar%20por%20un%20analisis%20de%20prefactibilidad%20para%20un%20lote." target="_blank"><i class="ti ti-ruler-measure"></i>Solicitar análisis de prefactibilidad</a></p>
-</div>
-</div>
-
-<!-- ¿HABLAMOS? -->
-<div class="portal-cta">
-<h2>¿Hablamos?</h2>
-<div class="actions" style="justify-content:center">
-<a class="btn primary" href="https://wa.me/5491161737552" target="_blank"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>
-<a class="btn secondary" href="https://whatsapp.com/channel/0029VbBiYGGLCoWvqOOv4y1O" target="_blank"><i class="ti ti-brand-whatsapp"></i>Canal WPP</a>
-<a class="btn secondary" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20que%20coordinemos%20una%20reuni%C3%B3n" target="_blank"><i class="ti ti-calendar-event"></i>Agendar reunión</a>
-<a class="btn secondary" href="matias-leiblich.vcf" type="text/vcard" download="matias-leiblich.vcf"><i class="ti ti-id"></i>Guardar mi contacto</a>
-</div>
+<div class="section-heading"><div class="section-heading-bar"></div>¿Cómo puedo ayudarte?</div>
+<div class="cta-grid">
+  <div class="cta-card">
+    <div class="cta-icon"><i class="ti ti-message-circle"></i></div>
+    <h3>¿Necesitás ayuda con tu operación?</h3>
+    <p>Contame en qué etapa estás y te oriento sin compromiso.</p>
+    <div class="cta-link-stack">
+      <a class="cta-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Compra%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20una%20operacion." target="_blank"><i class="ti ti-home"></i>Quiero comprar</a>
+      <a class="cta-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Utilice%20la%20Calculadora%20de%20Venta%20y%20quisiera%20recibir%20asesoramiento%20para%20analizar%20la%20venta%20de%20una%20propiedad." target="_blank"><i class="ti ti-coins"></i>Quiero vender</a>
+    </div>
+  </div>
+  <div class="cta-card">
+    <div class="cta-icon"><i class="ti ti-search"></i></div>
+    <h3>¿Estás buscando tu próxima propiedad?</h3>
+    <p>Acompañamiento profesional de arquitectos e ingenieros durante todo el proceso de búsqueda.</p>
+    <a class="cta-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20buscando%20una%20propiedad%20y%20quisiera%20recibir%20asesoramiento." target="_blank"><i class="ti ti-search"></i>Recibir asesoramiento</a>
+  </div>
+  <div class="cta-card">
+    <div class="cta-icon"><i class="ti ti-books"></i></div>
+    <h3>Guías gratuitas</h3>
+    <p>Material informativo para compradores, vendedores e inversores. Descargá y aprendé a tu ritmo.</p>
+    <a class="cta-link" href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank"><i class="ti ti-books"></i>Ver biblioteca</a>
+  </div>
+  <div class="cta-card">
+    <div class="cta-icon"><i class="ti ti-ruler-measure"></i></div>
+    <h3>¿Qué hacer con mi lote?</h3>
+    <p>Analizamos indicadores urbanísticos y potencial constructivo para proyectos de inversión.</p>
+    <a class="cta-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20consultar%20por%20un%20analisis%20de%20prefactibilidad%20para%20un%20lote." target="_blank"><i class="ti ti-ruler-measure"></i>Solicitar análisis</a>
+  </div>
 </div>
 
-<footer>© IN² Platform · Matías Leiblich</footer>
+<!-- HABLAMOS -->
+<div class="hablamos">
+  <h2>¿Hablamos?</h2>
+  <div class="actions">
+    <a class="btn btn-wpp" href="https://wa.me/5491161737552" target="_blank"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>
+    <a class="btn btn-outline" href="https://whatsapp.com/channel/0029VbBiYGGLCoWvqOOv4y1O" target="_blank"><i class="ti ti-brand-whatsapp"></i>Canal de WhatsApp</a>
+    <a class="btn btn-outline" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20que%20coordinemos%20una%20reuni%C3%B3n" target="_blank"><i class="ti ti-calendar-event"></i>Agendar reunión</a>
+    <a class="btn btn-outline" href="../matias-leiblich.vcf" download="matias-leiblich.vcf"><i class="ti ti-id"></i>Guardar contacto</a>
+  </div>
+</div>
 
-</div></body></html>
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Matías Leiblich</div>
+    <div class="footer-sub">Ingenieros Inmobiliarios · IN² Platform</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/tutemudas" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+    <a href="https://linkedin.com/in/matias-leiblich" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+    <a href="https://matiasleiblich.com" target="_blank"><i class="ti ti-home"></i> Portal</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
